@@ -1,12 +1,13 @@
 .DEFAULT_GOAL := help
 BASE_IMG ?= nvidia/cuda:12.1.0-cudnn8-runtime-ubuntu22.04
 COMPOSE_FILE ?= compose_testGPUAccess.yml
+DOCKERHUB_REPO ?= rr5555/gpu_access_test:test
 
 docker-build: ## Build the test img
-	docker build --tag rr5555/gpu_access_test:test --build-arg BASE_IMG=$(BASE_IMG) -f Dockerfile_testGPUAccess .
+	docker build --tag $(DOCKERHUB_REPO) --build-arg BASE_IMG=$(BASE_IMG) -f Dockerfile_testGPUAccess .
 
 dockerhub-push: ## Push the test img to DockerHub
-	docker push rr5555/gpu_access_test:test
+	docker push $(DOCKERHUB_REPO)
 
 docker-build-push: ## Build the test img & Push the test img to DockerHub
 	$(MAKE) docker-build
@@ -19,7 +20,7 @@ stop-test: ## Stop the launched docker compose
 	docker compose -p gpu_access_test down
 
 docker-clean: ## Remove the test img
-	docker rmi rr5555/gpu_access_test:test
+	docker rmi $(DOCKERHUB_REPO)
 
 
 trunc-test: ## Launch test from already pushed test img (no cleaning included)
