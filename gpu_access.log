@@ -1,0 +1,85 @@
+
+Testing wo restrictions:
+COMPOSE_FILE=compose_testGPUAccess.yml make trunc-test
+make[1]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make launch-test
+make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+docker compose -f compose_testGPUAccess.yml up
+Attaching to test-1
+[2K[2K[2Ktest-1  | torch.cuda.is_available():True
+[2Ktest-1  | torch.cuda.device_count():4
+test-1 exited with code 0
+make[2]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make stop-test
+make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+docker compose -p gpu_access_test down
+make[2]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make[1]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+
+Testing with `device_ids`:
+COMPOSE_FILE=compose_testGPUAccess_device_ids.yml make trunc-test
+make[1]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make launch-test
+make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+docker compose -f compose_testGPUAccess_device_ids.yml up
+Attaching to test-1
+[2K[2K[2Ktest-1  | torch.cuda.is_available():True
+[2Ktest-1  | torch.cuda.device_count():1
+test-1 exited with code 0
+make[2]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make stop-test
+make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+docker compose -p gpu_access_test down
+make[2]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make[1]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+
+Testing with `GPU_ID`:
+COMPOSE_FILE=compose_testGPUAccess_GPU_ID.yml make trunc-test
+make[1]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make launch-test
+make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+docker compose -f compose_testGPUAccess_GPU_ID.yml up
+Attaching to test-1
+[2K[2K[2Ktest-1  | torch.cuda.is_available():True
+[2Ktest-1  | torch.cuda.device_count():4
+test-1 exited with code 0
+make[2]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make stop-test
+make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+docker compose -p gpu_access_test down
+make[2]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make[1]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+
+Testing with `CUDA_VISIBLE_DEVICES`:
+COMPOSE_FILE=compose_testGPUAccess_CUDA_VISIBLE_DEVICES.yml make trunc-test
+make[1]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make launch-test
+make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+docker compose -f compose_testGPUAccess_CUDA_VISIBLE_DEVICES.yml up
+Attaching to test-1
+[2K[2K[2Ktest-1  | torch.cuda.is_available():True
+[2Ktest-1  | torch.cuda.device_count():1
+test-1 exited with code 0
+make[2]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make stop-test
+make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+docker compose -p gpu_access_test down
+make[2]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make[1]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+
+Testing with `NVIDIA_VISIBLE_DEVICES`:
+COMPOSE_FILE=compose_testGPUAccess_NVIDIA_VISIBLE_DEVICES.yml make trunc-test
+make[1]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make launch-test
+make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+docker compose -f compose_testGPUAccess_NVIDIA_VISIBLE_DEVICES.yml up
+Attaching to test-1
+[2K[2K[2Ktest-1  | torch.cuda.is_available():True
+[2Ktest-1  | torch.cuda.device_count():1
+test-1 exited with code 0
+make[2]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make stop-test
+make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+docker compose -p gpu_access_test down
+make[2]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make[1]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
