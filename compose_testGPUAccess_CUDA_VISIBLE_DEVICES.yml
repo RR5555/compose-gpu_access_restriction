@@ -1,0 +1,25 @@
+version: "0.1"
+name: gpu_access_test
+
+
+services:
+
+  test:
+    image: rr5555/gpu_access_test:test
+    deploy:
+      restart_policy:
+        condition: on-failure
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            capabilities: [gpu]
+
+
+    privileged: true
+    environment:
+      CUDA_VISIBLE_DEVICES: 0
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    entrypoint: >
+      bash -c "printf 'import torch\\nprint(f\"torch.cuda.is_available():{torch.cuda.is_available()}\")\\nprint(f\"torch.cuda.device_count():{torch.cuda.device_count()}\")' | python3"
