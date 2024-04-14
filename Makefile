@@ -7,6 +7,9 @@ DOCKER_FILE ?= Dockerfile
 docker-build: ## Build the test img with pytorch & pynvml
 	docker build --tag $(DOCKERHUB_REPO) --build-arg BASE_IMG=$(BASE_IMG) -f $(DOCKER_FILE) .
 
+docker-build-no-cache: ## Build the test img with pytorch & pynvml with no cache
+	docker build --no-cache --tag $(DOCKERHUB_REPO) --build-arg BASE_IMG=$(BASE_IMG) -f $(DOCKER_FILE) .
+
 docker-build-pytorch: ## Build the test img with pytorch
 	DOCKER_FILE=pytorch/Dockerfile DOCKERHUB_REPO=rr5555/gpu_access_test:test_pytorch $(MAKE) docker-build
 

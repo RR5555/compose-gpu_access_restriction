@@ -12,4 +12,6 @@ services:
         condition: on-failure
 
     entrypoint: >
-      bash -c "printf 'import torch\\nprint(f\"torch.cuda.is_available():{torch.cuda.is_available()}\")\\nprint(f\"torch.cuda.device_count():{torch.cuda.device_count()}\")' | python3"
+      bash -c "printf 'from pynvml import *\\nnvmlInit()\\nprint(\"Driver Version:\", nvmlSystemGetDriverVersion())\\ndeviceCount = nvmlDeviceGetCount()\\nfor i in range(deviceCount):\\n\\thandle = nvmlDeviceGetHandleByIndex(i)\\n\\tprint(\"Device\", i, \":\", nvmlDeviceGetName(handle))\\nnvmlShutdown()' | python3"
+
+

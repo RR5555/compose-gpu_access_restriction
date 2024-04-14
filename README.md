@@ -3,6 +3,21 @@
 ([Execute python program from command line without script file](https://stackoverflow.com/a/50986459/8612123))
 
 
+
+
+
+
+docker-build-no-cache if docker-build fails at apt install cannot find the repo.s:\
+[error building docker image 'executor failed running [/bin/sh -c apt-get -y update]'](https://stackoverflow.com/a/68849691/8612123):\
+''
+In my case, docker was still using the cached RUN apt update && apt upgrade command, thus not updating the package sources.
+
+The solution was to build the docker image once with the --no-cache flag:
+```bash
+docker build --no-cache .
+```
+''
+
 ```bash
 # Build and push:
 make docker-build-push
