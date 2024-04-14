@@ -30,7 +30,10 @@ trunc-test: ## Launch test from already pushed test img (no cleaning included)
 
 all-tests: ## Run all tests
 	@echo
-	@echo 'Testing with `device_ids:`'
+	@echo 'Testing wo restrictions:'
+	COMPOSE_FILE=compose_testGPUAccess.yml $(MAKE) trunc-test
+	@echo
+	@echo 'Testing with `device_ids`:'
 	COMPOSE_FILE=compose_testGPUAccess_device_ids.yml $(MAKE) trunc-test
 	@echo
 	@echo 'Testing with `GPU_ID`:'

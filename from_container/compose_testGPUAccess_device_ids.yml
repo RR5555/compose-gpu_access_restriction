@@ -13,10 +13,13 @@ services:
         reservations:
           devices:
           - driver: nvidia
+            device_ids:
+              - "0"
             capabilities: [gpu]
 
 
-    environment:
-      NVIDIA_VISIBLE_DEVICES: 0
+    privileged: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
     entrypoint: >
       bash -c "printf 'import torch\\nprint(f\"torch.cuda.is_available():{torch.cuda.is_available()}\")\\nprint(f\"torch.cuda.device_count():{torch.cuda.device_count()}\")' | python3"
