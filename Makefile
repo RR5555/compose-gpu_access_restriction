@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 BASE_IMG ?= nvidia/cuda:12.1.0-cudnn8-runtime-ubuntu22.04
-COMPOSE_FILE ?= compose_testGPUAccess.yml
+COMPOSE_FILE ?= pytorch/compose_testGPUAccess.yml
 DOCKERHUB_REPO ?= rr5555/gpu_access_test:test
 
 docker-build: ## Build the test img
@@ -31,19 +31,19 @@ trunc-test: ## Launch test from already pushed test img (no cleaning included)
 all-tests: ## Run all tests
 	@echo
 	@echo 'Testing wo restrictions:'
-	COMPOSE_FILE=compose_testGPUAccess.yml $(MAKE) trunc-test
+	COMPOSE_FILE=pytorch/compose_testGPUAccess.yml $(MAKE) trunc-test
 	@echo
 	@echo 'Testing with `device_ids`:'
-	COMPOSE_FILE=compose_testGPUAccess_device_ids.yml $(MAKE) trunc-test
+	COMPOSE_FILE=pytorch/compose_testGPUAccess_device_ids.yml $(MAKE) trunc-test
 	@echo
 	@echo 'Testing with `GPU_ID`:'
-	COMPOSE_FILE=compose_testGPUAccess_GPU_ID.yml $(MAKE) trunc-test
+	COMPOSE_FILE=pytorch/compose_testGPUAccess_GPU_ID.yml $(MAKE) trunc-test
 	@echo
 	@echo 'Testing with `CUDA_VISIBLE_DEVICES`:'
-	COMPOSE_FILE=compose_testGPUAccess_CUDA_VISIBLE_DEVICES.yml $(MAKE) trunc-test
+	COMPOSE_FILE=pytorch/compose_testGPUAccess_CUDA_VISIBLE_DEVICES.yml $(MAKE) trunc-test
 	@echo
 	@echo 'Testing with `NVIDIA_VISIBLE_DEVICES`:'
-	COMPOSE_FILE=compose_testGPUAccess_NVIDIA_VISIBLE_DEVICES.yml $(MAKE) trunc-test
+	COMPOSE_FILE=pytorch/compose_testGPUAccess_NVIDIA_VISIBLE_DEVICES.yml $(MAKE) trunc-test
 
 
 
