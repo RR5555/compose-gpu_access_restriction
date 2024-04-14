@@ -1,17 +1,26 @@
 .DEFAULT_GOAL := help
 BASE_IMG ?= nvidia/cuda:12.1.0-cudnn8-runtime-ubuntu22.04
 COMPOSE_FILE ?= pytorch/compose_testGPUAccess.yml
-DOCKERHUB_REPO ?= rr5555/gpu_access_test:test
+DOCKERHUB_REPO ?= rr5555/gpu_access_test:test_both
+DOCKER_FILE ?= Dockerfile
 
-docker-build: ## Build the test img
-	docker build --tag $(DOCKERHUB_REPO) --build-arg BASE_IMG=$(BASE_IMG) -f Dockerfile_testGPUAccess .
+docker-build: ## Build the test img with pytorch & pynvml
+	docker build --tag $(DOCKERHUB_REPO) --build-arg BASE_IMG=$(BASE_IMG) -f $(DOCKER_FILE) .
 
-dockerhub-push: ## Push the test img to DockerHub
+docker-build-pytorch: ## Build the test img with pytorch
+	DOCKER_FILE=pytorch/Dockerfile DOCKERHUB_REPO=rr5555/gpu_access_test:test_pytorch $(MAKE) docker-build
+
+docker-build-pynvml: ## Build the test img with pynvml
+	DOCKER_FILE=pynvml/Dockerfile DOCKERHUB_REPO=rr5555/gpu_access_test:test_pynvml $(MAKE) docker-build
+
+dockerhub-push: ## Push the test img with pytorch & pynvml to DockerHub
 	docker push $(DOCKERHUB_REPO)
 
-docker-build-push: ## Build the test img & Push the test img to DockerHub
-	$(MAKE) docker-build
-	$(MAKE) dockerhub-push
+dockerhub-push-pytorch: ## Push the test img with pytorch to DockerHub
+	docker push rr5555/gpu_access_test:test_pytorch
+
+dockerhub-push-pynvml: ## Push the test img with pynvml to DockerHub
+	docker push rr5555/gpu_access_test:test_pynvml
 
 launch-test: ## Launch the test by launching the right docker compose
 	docker compose -f $(COMPOSE_FILE) up
@@ -22,13 +31,18 @@ stop-test: ## Stop the launched docker compose
 docker-clean: ## Remove the test img
 	docker rmi $(DOCKERHUB_REPO)
 
+docker-clean-pytorch: ## Remove the test img
+	docker rmi rr5555/gpu_access_test:test_pytorch
+
+docker-clean-pynvml: ## Remove the test img
+	docker rmi rr5555/gpu_access_test:test_pynvml
 
 trunc-test: ## Launch test from already pushed test img (no cleaning included)
 	$(MAKE) launch-test
 	$(MAKE) stop-test
 
 
-all-tests: ## Run all tests
+all-pytorch-tests: ## Run all pytorch tests
 	@echo
 	@echo 'Testing wo restrictions:'
 	COMPOSE_FILE=pytorch/compose_testGPUAccess.yml $(MAKE) trunc-test
@@ -44,6 +58,24 @@ all-tests: ## Run all tests
 	@echo
 	@echo 'Testing with `NVIDIA_VISIBLE_DEVICES`:'
 	COMPOSE_FILE=pytorch/compose_testGPUAccess_NVIDIA_VISIBLE_DEVICES.yml $(MAKE) trunc-test
+
+all-pynvml-tests: ## Run all pytorch tests
+	@echo
+	@echo 'Testing wo restrictions:'
+	COMPOSE_FILE=pynvml/compose_testGPUAccess.yml $(MAKE) trunc-test
+	@echo
+	@echo 'Testing with `device_ids`:'
+	COMPOSE_FILE=pynvml/compose_testGPUAccess_device_ids.yml $(MAKE) trunc-test
+	@echo
+	@echo 'Testing with `GPU_ID`:'
+	COMPOSE_FILE=pynvml/compose_testGPUAccess_GPU_ID.yml $(MAKE) trunc-test
+	@echo
+	@echo 'Testing with `CUDA_VISIBLE_DEVICES`:'
+	COMPOSE_FILE=pynvml/compose_testGPUAccess_CUDA_VISIBLE_DEVICES.yml $(MAKE) trunc-test
+	@echo
+	@echo 'Testing with `NVIDIA_VISIBLE_DEVICES`:'
+	COMPOSE_FILE=pynvml/compose_testGPUAccess_NVIDIA_VISIBLE_DEVICES.yml $(MAKE) trunc-test
+
 
 
 

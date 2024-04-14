@@ -5,7 +5,7 @@ name: gpu_access_test
 services:
 
   test:
-    image: rr5555/gpu_access_test:test
+    image: rr5555/gpu_access_test:test_pytorch
     deploy:
       restart_policy:
         condition: on-failure
