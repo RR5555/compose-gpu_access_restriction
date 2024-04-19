@@ -11,4 +11,4 @@ services:
         condition: on-failure
 
     entrypoint: >
-      bash -c "printf 'import torch\\nimport time\\na = torch.randn([10, 10]).cuda()\\ntime.sleep(5)\\nprint(\"Done\")' | python3 & sleep 1; nvidia-smi; printf 'import torch\\nfor i in range(torch.cuda.device_count()):\\n\\tprint(torch.cuda.list_gpu_processes(i))' | python3"
+      bash -c "printf 'import torch\\nimport time\\na = torch.randn([1000, 1000]).cuda()\\ntime.sleep(5)\\nprint(\"Done\")' | python3 & sleep 1; nvidia-smi; printf 'import torch\\nfor i in range(torch.cuda.device_count()):\\n\\tprint(torch.cuda.list_gpu_processes(i))' | python3"
