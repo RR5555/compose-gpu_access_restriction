@@ -1,0 +1,14 @@
+name: gpu_access_test
+
+
+services:
+
+  test:
+    image: rr5555/gpu_access_test:test_pytorch
+    runtime: nvidia
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+    entrypoint: >
+      bash -c "printf 'import torch\\nimport time\\na = torch.randn([10, 10]).cuda()\\ntime.sleep(5)\\nDone' | python3 &; sleep 1; nvidia-smi"

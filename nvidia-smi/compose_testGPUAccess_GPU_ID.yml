@@ -1,0 +1,21 @@
+name: gpu_access_test
+
+
+services:
+
+  test:
+    image: rr5555/gpu_access_test:test_nvidia_smi
+    deploy:
+      restart_policy:
+        condition: on-failure
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            capabilities: [gpu]
+
+
+    environment:
+      GPU_ID: 0
+    entrypoint: >
+      bash -c "nvidia-smi"
