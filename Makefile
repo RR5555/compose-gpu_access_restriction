@@ -54,7 +54,7 @@ trunc-test: ## Launch test from already pushed test img (no cleaning included)
 	$(MAKE) stop-test
 
 
-all-nvidia-smi-tests: ## Run all pytorch tests
+all-nvidia-smi-tests: ## Run all nvidia-smi tests
 	@echo
 	@echo 'Testing nvidia-smi processes:'
 	COMPOSE_FILE=nvidia-smi/compose_testGPUAccess_dummy_load.yml $(MAKE) trunc-test
