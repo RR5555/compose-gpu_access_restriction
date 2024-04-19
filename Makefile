@@ -58,6 +58,7 @@ all-nvidia-smi-tests: ## Run all nvidia-smi tests
 	@echo
 	@echo 'Testing nvidia-smi processes:'
 	COMPOSE_FILE=nvidia-smi/compose_testGPUAccess_dummy_load.yml $(MAKE) trunc-test
+dummy:
 	@echo
 	@echo 'Testing wo restrictions:'
 	COMPOSE_FILE=nvidia-smi/compose_testGPUAccess.yml $(MAKE) trunc-test

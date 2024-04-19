@@ -11,4 +11,4 @@ services:
         condition: on-failure
 
     entrypoint: >
-      bash -c "printf 'import torch\\nimport time\\na = torch.randn([10, 10]).cuda(0)\\ntime.sleep(5)\\nprint(\"Done\")' | python3 & sleep 1; nvidia-smi; printf 'import torch\\nprint(torch.cuda.list_gpu_processes(0))' | python3"
+      bash -c "printf 'import torch\\nimport time\\na = torch.randn([10, 10]).cuda()\\ntime.sleep(5)\\nprint(\"Done\")' | python3 & sleep 1; nvidia-smi; printf 'import torch\\nprint(torch.cuda.list_gpu_processes())' | python3"
