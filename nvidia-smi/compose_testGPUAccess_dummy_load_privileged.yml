@@ -6,7 +6,7 @@ services:
   test:
     image: rr5555/gpu_access_test:test_both
     runtime: nvidia
-    # pid: host
+    privileged: true
     deploy:
       restart_policy:
         condition: on-failure
@@ -14,4 +14,4 @@ services:
     volumes:
       - ./code:/code
     entrypoint: >
-      bash -c "python3 /code/base_fct.py & ps -aux | grep -i python3; nvidia-smi; sleep 5"
+      bash -c "python3 /code/base_fct.py & sleep 1; ps -aux | grep -i python3; nvidia-smi; sleep 5"

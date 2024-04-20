@@ -54,11 +54,18 @@ trunc-test: ## Launch test from already pushed test img (no cleaning included)
 	$(MAKE) stop-test
 
 
-all-nvidia-smi-tests: ## Run all nvidia-smi tests
+nvidia-smi-dummy-load-tests: ## Run tests for dummy load processes
 	@echo
 	@echo 'Testing nvidia-smi processes:'
 	COMPOSE_FILE=nvidia-smi/compose_testGPUAccess_dummy_load.yml $(MAKE) trunc-test
-dummy:
+	@echo
+	@echo 'Testing nvidia-smi processes with pid host:'
+	COMPOSE_FILE=nvidia-smi/compose_testGPUAccess_dummy_load_pid_host.yml $(MAKE) trunc-test
+	@echo
+	@echo 'Testing nvidia-smi processes with priviledged:'
+	COMPOSE_FILE=nvidia-smi/compose_testGPUAccess_dummy_load_privileged.yml $(MAKE) trunc-test
+
+all-nvidia-smi-tests: ## Run all nvidia-smi tests
 	@echo
 	@echo 'Testing wo restrictions:'
 	COMPOSE_FILE=nvidia-smi/compose_testGPUAccess.yml $(MAKE) trunc-test
