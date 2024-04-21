@@ -59,7 +59,7 @@ def get_gpu_processes(device):
 		print(p.pid)
 
 if __name__=="__main__":
-	hello_world()
+	# hello_world()
 	a = torch.randn([1000, 1000]).cuda()
 	check_processes()
 
