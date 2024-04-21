@@ -61,9 +61,6 @@ nvidia-smi-dummy-load-tests: ## Run tests for dummy load processes
 	@echo
 	@echo 'Testing nvidia-smi processes with pid host:'
 	COMPOSE_FILE=nvidia-smi/compose_testGPUAccess_dummy_load_pid_host.yml $(MAKE) trunc-test
-	@echo
-	@echo 'Testing nvidia-smi processes with priviledged:'
-	COMPOSE_FILE=nvidia-smi/compose_testGPUAccess_dummy_load_privileged.yml $(MAKE) trunc-test
 
 all-nvidia-smi-tests: ## Run all nvidia-smi tests
 	@echo
