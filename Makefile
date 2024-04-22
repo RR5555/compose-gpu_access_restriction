@@ -73,6 +73,9 @@ all-nvidia-smi-tests: ## Run all nvidia-smi tests
 	@echo 'Testing with `GPU_ID`:'
 	COMPOSE_FILE=nvidia-smi/compose_testGPUAccess_GPU_ID.yml $(MAKE) trunc-test
 	@echo
+	@echo 'Testing with `GPU_IDS`:'
+	COMPOSE_FILE=nvidia-smi/compose_testGPUAccess_GPU_IDS.yml $(MAKE) trunc-test
+	@echo
 	@echo 'Testing with `CUDA_VISIBLE_DEVICES`:'
 	COMPOSE_FILE=nvidia-smi/compose_testGPUAccess_CUDA_VISIBLE_DEVICES.yml $(MAKE) trunc-test
 	@echo

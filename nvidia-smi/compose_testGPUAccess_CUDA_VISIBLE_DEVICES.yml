@@ -18,4 +18,4 @@ services:
     environment:
       CUDA_VISIBLE_DEVICES: 0
     entrypoint: >
-      bash -c "nvidia-smi"
+      bash -c "nvidia-smi;  echo 'Env. reverse back:'; CUDA_VISIBLE_DEVICES=all nvidia-smi"

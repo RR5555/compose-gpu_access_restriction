@@ -18,4 +18,4 @@ services:
 
 
     entrypoint: >
-      bash -c "nvidia-smi"
+      bash -c "nvidia-smi; echo 'With all NVIDIA_VISIBLE_DEVICES:'; NVIDIA_VISIBLE_DEVICES=all nvidia-smi"

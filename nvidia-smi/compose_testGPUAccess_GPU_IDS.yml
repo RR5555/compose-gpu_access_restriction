@@ -16,6 +16,6 @@ services:
 
 
     environment:
-      NVIDIA_VISIBLE_DEVICES: 0
+      GPU_IDS: 0
     entrypoint: >
-      bash -c "nvidia-smi; echo 'Env. reverse back:'; NVIDIA_VISIBLE_DEVICES=all nvidia-smi"
+      bash -c "nvidia-smi; echo 'Env. reverse back:'; GPU_IDS=all nvidia-smi"
