@@ -6,7 +6,7 @@ make launch-test
 make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
 docker compose -f nvidia-smi/compose_testGPUAccess.yml up
 Attaching to test-1
-[2Ktest-1  | Sun Apr 21 11:20:32 2024       
+[2Ktest-1  | Mon Apr 22 16:01:33 2024       
 [2Ktest-1  | +---------------------------------------------------------------------------------------+
 [2Ktest-1  | | NVIDIA-SMI 535.171.04             Driver Version: 535.171.04   CUDA Version: 12.2     |
 [2Ktest-1  | |-----------------------------------------+----------------------+----------------------+
@@ -15,15 +15,15 @@ Attaching to test-1
 [2Ktest-1  | |                                         |                      |               MIG M. |
 [2Ktest-1  | |=========================================+======================+======================|
 [2Ktest-1  | |   0  NVIDIA TITAN X (Pascal)        Off | 00000000:03:00.0 Off |                  N/A |
-[2Ktest-1  | | 23%   27C    P8               9W / 250W |     29MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | | 23%   28C    P8               9W / 250W |     29MiB / 12288MiB |      0%      Default |
 [2Ktest-1  | |                                         |                      |                  N/A |
 [2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
 [2Ktest-1  | |   1  NVIDIA TITAN X (Pascal)        Off | 00000000:04:00.0 Off |                  N/A |
-[2Ktest-1  | | 23%   24C    P8               8W / 250W |      6MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | | 23%   25C    P8               8W / 250W |      6MiB / 12288MiB |      0%      Default |
 [2Ktest-1  | |                                         |                      |                  N/A |
 [2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
 [2Ktest-1  | |   2  NVIDIA TITAN X (Pascal)        Off | 00000000:81:00.0 Off |                  N/A |
-[2Ktest-1  | | 23%   25C    P8               8W / 250W |      6MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | | 23%   26C    P8               9W / 250W |      6MiB / 12288MiB |      0%      Default |
 [2Ktest-1  | |                                         |                      |                  N/A |
 [2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
 [2Ktest-1  | |   3  NVIDIA TITAN V                 Off | 00000000:82:00.0 Off |                  N/A |
@@ -52,7 +52,27 @@ make launch-test
 make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
 docker compose -f nvidia-smi/compose_testGPUAccess_device_ids.yml up
 Attaching to test-1
-[2Ktest-1  | Sun Apr 21 11:20:33 2024       
+[2Ktest-1  | Mon Apr 22 16:01:34 2024       
+[2Ktest-1  | +---------------------------------------------------------------------------------------+
+[2Ktest-1  | | NVIDIA-SMI 535.171.04             Driver Version: 535.171.04   CUDA Version: 12.2     |
+[2Ktest-1  | |-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  | | GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+[2Ktest-1  | | Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+[2Ktest-1  | |                                         |                      |               MIG M. |
+[2Ktest-1  | |=========================================+======================+======================|
+[2Ktest-1  | |   0  NVIDIA TITAN X (Pascal)        Off | 00000000:03:00.0 Off |                  N/A |
+[2Ktest-1  | | 23%   28C    P8               8W / 250W |     29MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | |                                         |                      |                  N/A |
+[2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  |                                                                                          
+[2Ktest-1  | +---------------------------------------------------------------------------------------+
+[2Ktest-1  | | Processes:                                                                            |
+[2Ktest-1  | |  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+[2Ktest-1  | |        ID   ID                                                             Usage      |
+[2Ktest-1  | |=======================================================================================|
+[2Ktest-1  | +---------------------------------------------------------------------------------------+
+[2Ktest-1  | With all NVIDIA_VISIBLE_DEVICES:
+[2Ktest-1  | Mon Apr 22 16:01:34 2024       
 [2Ktest-1  | +---------------------------------------------------------------------------------------+
 [2Ktest-1  | | NVIDIA-SMI 535.171.04             Driver Version: 535.171.04   CUDA Version: 12.2     |
 [2Ktest-1  | |-----------------------------------------+----------------------+----------------------+
@@ -86,7 +106,7 @@ make launch-test
 make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
 docker compose -f nvidia-smi/compose_testGPUAccess_GPU_ID.yml up
 Attaching to test-1
-[2Ktest-1  | Sun Apr 21 11:20:35 2024       
+[2Ktest-1  | Mon Apr 22 16:01:36 2024       
 [2Ktest-1  | +---------------------------------------------------------------------------------------+
 [2Ktest-1  | | NVIDIA-SMI 535.171.04             Driver Version: 535.171.04   CUDA Version: 12.2     |
 [2Ktest-1  | |-----------------------------------------+----------------------+----------------------+
@@ -95,19 +115,129 @@ Attaching to test-1
 [2Ktest-1  | |                                         |                      |               MIG M. |
 [2Ktest-1  | |=========================================+======================+======================|
 [2Ktest-1  | |   0  NVIDIA TITAN X (Pascal)        Off | 00000000:03:00.0 Off |                  N/A |
-[2Ktest-1  | | 23%   27C    P8               9W / 250W |     29MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | | 23%   28C    P8               8W / 250W |     29MiB / 12288MiB |      0%      Default |
 [2Ktest-1  | |                                         |                      |                  N/A |
 [2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
 [2Ktest-1  | |   1  NVIDIA TITAN X (Pascal)        Off | 00000000:04:00.0 Off |                  N/A |
-[2Ktest-1  | | 23%   24C    P8               9W / 250W |      6MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | | 23%   25C    P8               9W / 250W |      6MiB / 12288MiB |      0%      Default |
 [2Ktest-1  | |                                         |                      |                  N/A |
 [2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
 [2Ktest-1  | |   2  NVIDIA TITAN X (Pascal)        Off | 00000000:81:00.0 Off |                  N/A |
-[2Ktest-1  | | 23%   25C    P8               8W / 250W |      6MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | | 23%   26C    P8               8W / 250W |      6MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | |                                         |                      |                  N/A |
+[2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  | |   3  NVIDIA TITAN V                 Off | 00000000:82:00.0 Off |                  N/A |
+[2Ktest-1  | | 28%   34C    P8              24W / 250W |      5MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | |                                         |                      |                  N/A |
+[2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  |                                                                                          
+[2Ktest-1  | +---------------------------------------------------------------------------------------+
+[2Ktest-1  | | Processes:                                                                            |
+[2Ktest-1  | |  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+[2Ktest-1  | |        ID   ID                                                             Usage      |
+[2Ktest-1  | |=======================================================================================|
+[2Ktest-1  | +---------------------------------------------------------------------------------------+
+[2Ktest-1  | Env. reverse back:
+[2Ktest-1  | Mon Apr 22 16:01:36 2024       
+[2Ktest-1  | +---------------------------------------------------------------------------------------+
+[2Ktest-1  | | NVIDIA-SMI 535.171.04             Driver Version: 535.171.04   CUDA Version: 12.2     |
+[2Ktest-1  | |-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  | | GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+[2Ktest-1  | | Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+[2Ktest-1  | |                                         |                      |               MIG M. |
+[2Ktest-1  | |=========================================+======================+======================|
+[2Ktest-1  | |   0  NVIDIA TITAN X (Pascal)        Off | 00000000:03:00.0 Off |                  N/A |
+[2Ktest-1  | | 23%   29C    P8               8W / 250W |     29MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | |                                         |                      |                  N/A |
+[2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  | |   1  NVIDIA TITAN X (Pascal)        Off | 00000000:04:00.0 Off |                  N/A |
+[2Ktest-1  | | 23%   25C    P8               9W / 250W |      6MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | |                                         |                      |                  N/A |
+[2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  | |   2  NVIDIA TITAN X (Pascal)        Off | 00000000:81:00.0 Off |                  N/A |
+[2Ktest-1  | | 23%   26C    P8               8W / 250W |      6MiB / 12288MiB |      0%      Default |
 [2Ktest-1  | |                                         |                      |                  N/A |
 [2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
 [2Ktest-1  | |   3  NVIDIA TITAN V                 Off | 00000000:82:00.0 Off |                  N/A |
 [2Ktest-1  | | 28%   33C    P8              24W / 250W |      5MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | |                                         |                      |                  N/A |
+[2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  |                                                                                          
+[2Ktest-1  | +---------------------------------------------------------------------------------------+
+[2Ktest-1  | | Processes:                                                                            |
+[2Ktest-1  | |  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+[2Ktest-1  | |        ID   ID                                                             Usage      |
+[2Ktest-1  | |=======================================================================================|
+[2Ktest-1  | +---------------------------------------------------------------------------------------+
+test-1 exited with code 0
+make[2]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make stop-test
+make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+docker compose -p gpu_access_test down
+make[2]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make[1]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+
+Testing with `GPU_IDS`:
+COMPOSE_FILE=nvidia-smi/compose_testGPUAccess_GPU_IDS.yml make trunc-test
+make[1]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make launch-test
+make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+docker compose -f nvidia-smi/compose_testGPUAccess_GPU_IDS.yml up
+Attaching to test-1
+[2Ktest-1  | Mon Apr 22 16:01:37 2024       
+[2Ktest-1  | +---------------------------------------------------------------------------------------+
+[2Ktest-1  | | NVIDIA-SMI 535.171.04             Driver Version: 535.171.04   CUDA Version: 12.2     |
+[2Ktest-1  | |-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  | | GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+[2Ktest-1  | | Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+[2Ktest-1  | |                                         |                      |               MIG M. |
+[2Ktest-1  | |=========================================+======================+======================|
+[2Ktest-1  | |   0  NVIDIA TITAN X (Pascal)        Off | 00000000:03:00.0 Off |                  N/A |
+[2Ktest-1  | | 23%   28C    P8               9W / 250W |     29MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | |                                         |                      |                  N/A |
+[2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  | |   1  NVIDIA TITAN X (Pascal)        Off | 00000000:04:00.0 Off |                  N/A |
+[2Ktest-1  | | 23%   25C    P8               9W / 250W |      6MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | |                                         |                      |                  N/A |
+[2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  | |   2  NVIDIA TITAN X (Pascal)        Off | 00000000:81:00.0 Off |                  N/A |
+[2Ktest-1  | | 23%   26C    P8               9W / 250W |      6MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | |                                         |                      |                  N/A |
+[2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  | |   3  NVIDIA TITAN V                 Off | 00000000:82:00.0 Off |                  N/A |
+[2Ktest-1  | | 28%   33C    P8              24W / 250W |      5MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | |                                         |                      |                  N/A |
+[2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  |                                                                                          
+[2Ktest-1  | +---------------------------------------------------------------------------------------+
+[2Ktest-1  | | Processes:                                                                            |
+[2Ktest-1  | |  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+[2Ktest-1  | |        ID   ID                                                             Usage      |
+[2Ktest-1  | |=======================================================================================|
+[2Ktest-1  | +---------------------------------------------------------------------------------------+
+[2Ktest-1  | Env. reverse back:
+[2Ktest-1  | Mon Apr 22 16:01:37 2024       
+[2Ktest-1  | +---------------------------------------------------------------------------------------+
+[2Ktest-1  | | NVIDIA-SMI 535.171.04             Driver Version: 535.171.04   CUDA Version: 12.2     |
+[2Ktest-1  | |-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  | | GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+[2Ktest-1  | | Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+[2Ktest-1  | |                                         |                      |               MIG M. |
+[2Ktest-1  | |=========================================+======================+======================|
+[2Ktest-1  | |   0  NVIDIA TITAN X (Pascal)        Off | 00000000:03:00.0 Off |                  N/A |
+[2Ktest-1  | | 23%   28C    P8              11W / 250W |     29MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | |                                         |                      |                  N/A |
+[2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  | |   1  NVIDIA TITAN X (Pascal)        Off | 00000000:04:00.0 Off |                  N/A |
+[2Ktest-1  | | 23%   25C    P8               9W / 250W |      6MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | |                                         |                      |                  N/A |
+[2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  | |   2  NVIDIA TITAN X (Pascal)        Off | 00000000:81:00.0 Off |                  N/A |
+[2Ktest-1  | | 23%   26C    P8               9W / 250W |      6MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | |                                         |                      |                  N/A |
+[2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  | |   3  NVIDIA TITAN V                 Off | 00000000:82:00.0 Off |                  N/A |
+[2Ktest-1  | | 28%   34C    P8              24W / 250W |      5MiB / 12288MiB |      0%      Default |
 [2Ktest-1  | |                                         |                      |                  N/A |
 [2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
 [2Ktest-1  |                                                                                          
@@ -132,7 +262,7 @@ make launch-test
 make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
 docker compose -f nvidia-smi/compose_testGPUAccess_CUDA_VISIBLE_DEVICES.yml up
 Attaching to test-1
-[2Ktest-1  | Sun Apr 21 11:20:37 2024       
+[2Ktest-1  | Mon Apr 22 16:01:39 2024       
 [2Ktest-1  | +---------------------------------------------------------------------------------------+
 [2Ktest-1  | | NVIDIA-SMI 535.171.04             Driver Version: 535.171.04   CUDA Version: 12.2     |
 [2Ktest-1  | |-----------------------------------------+----------------------+----------------------+
@@ -141,15 +271,47 @@ Attaching to test-1
 [2Ktest-1  | |                                         |                      |               MIG M. |
 [2Ktest-1  | |=========================================+======================+======================|
 [2Ktest-1  | |   0  NVIDIA TITAN X (Pascal)        Off | 00000000:03:00.0 Off |                  N/A |
-[2Ktest-1  | | 23%   27C    P8               8W / 250W |     29MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | | 23%   28C    P8               9W / 250W |     29MiB / 12288MiB |      0%      Default |
 [2Ktest-1  | |                                         |                      |                  N/A |
 [2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
 [2Ktest-1  | |   1  NVIDIA TITAN X (Pascal)        Off | 00000000:04:00.0 Off |                  N/A |
-[2Ktest-1  | | 23%   24C    P8               8W / 250W |      6MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | | 23%   25C    P8               9W / 250W |      6MiB / 12288MiB |      0%      Default |
 [2Ktest-1  | |                                         |                      |                  N/A |
 [2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
 [2Ktest-1  | |   2  NVIDIA TITAN X (Pascal)        Off | 00000000:81:00.0 Off |                  N/A |
+[2Ktest-1  | | 23%   26C    P8               9W / 250W |      6MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | |                                         |                      |                  N/A |
+[2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  | |   3  NVIDIA TITAN V                 Off | 00000000:82:00.0 Off |                  N/A |
+[2Ktest-1  | | 28%   34C    P8              24W / 250W |      5MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | |                                         |                      |                  N/A |
+[2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  |                                                                                          
+[2Ktest-1  | +---------------------------------------------------------------------------------------+
+[2Ktest-1  | | Processes:                                                                            |
+[2Ktest-1  | |  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+[2Ktest-1  | |        ID   ID                                                             Usage      |
+[2Ktest-1  | |=======================================================================================|
+[2Ktest-1  | +---------------------------------------------------------------------------------------+
+[2Ktest-1  | Env. reverse back:
+[2Ktest-1  | Mon Apr 22 16:01:39 2024       
+[2Ktest-1  | +---------------------------------------------------------------------------------------+
+[2Ktest-1  | | NVIDIA-SMI 535.171.04             Driver Version: 535.171.04   CUDA Version: 12.2     |
+[2Ktest-1  | |-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  | | GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+[2Ktest-1  | | Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+[2Ktest-1  | |                                         |                      |               MIG M. |
+[2Ktest-1  | |=========================================+======================+======================|
+[2Ktest-1  | |   0  NVIDIA TITAN X (Pascal)        Off | 00000000:03:00.0 Off |                  N/A |
+[2Ktest-1  | | 23%   28C    P8               8W / 250W |     29MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | |                                         |                      |                  N/A |
+[2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  | |   1  NVIDIA TITAN X (Pascal)        Off | 00000000:04:00.0 Off |                  N/A |
 [2Ktest-1  | | 23%   25C    P8               8W / 250W |      6MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | |                                         |                      |                  N/A |
+[2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  | |   2  NVIDIA TITAN X (Pascal)        Off | 00000000:81:00.0 Off |                  N/A |
+[2Ktest-1  | | 23%   26C    P8               9W / 250W |      6MiB / 12288MiB |      0%      Default |
 [2Ktest-1  | |                                         |                      |                  N/A |
 [2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
 [2Ktest-1  | |   3  NVIDIA TITAN V                 Off | 00000000:82:00.0 Off |                  N/A |
@@ -178,7 +340,27 @@ make launch-test
 make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
 docker compose -f nvidia-smi/compose_testGPUAccess_NVIDIA_VISIBLE_DEVICES.yml up
 Attaching to test-1
-[2Ktest-1  | Sun Apr 21 11:20:38 2024       
+[2Ktest-1  | Mon Apr 22 16:01:41 2024       
+[2Ktest-1  | +---------------------------------------------------------------------------------------+
+[2Ktest-1  | | NVIDIA-SMI 535.171.04             Driver Version: 535.171.04   CUDA Version: 12.2     |
+[2Ktest-1  | |-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  | | GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+[2Ktest-1  | | Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+[2Ktest-1  | |                                         |                      |               MIG M. |
+[2Ktest-1  | |=========================================+======================+======================|
+[2Ktest-1  | |   0  NVIDIA TITAN X (Pascal)        Off | 00000000:03:00.0 Off |                  N/A |
+[2Ktest-1  | | 23%   28C    P8               8W / 250W |     29MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | |                                         |                      |                  N/A |
+[2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
+[2Ktest-1  |                                                                                          
+[2Ktest-1  | +---------------------------------------------------------------------------------------+
+[2Ktest-1  | | Processes:                                                                            |
+[2Ktest-1  | |  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+[2Ktest-1  | |        ID   ID                                                             Usage      |
+[2Ktest-1  | |=======================================================================================|
+[2Ktest-1  | +---------------------------------------------------------------------------------------+
+[2Ktest-1  | Env. reverse back:
+[2Ktest-1  | Mon Apr 22 16:01:41 2024       
 [2Ktest-1  | +---------------------------------------------------------------------------------------+
 [2Ktest-1  | | NVIDIA-SMI 535.171.04             Driver Version: 535.171.04   CUDA Version: 12.2     |
 [2Ktest-1  | |-----------------------------------------+----------------------+----------------------+
