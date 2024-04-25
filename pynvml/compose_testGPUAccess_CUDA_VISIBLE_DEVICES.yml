@@ -18,5 +18,5 @@ services:
     environment:
       CUDA_VISIBLE_DEVICES: 0
     entrypoint: >
-      bash -c "printf 'from pynvml import *\\nnvmlInit()\\nprint(\"Driver Version:\", nvmlSystemGetDriverVersion())\\ndeviceCount = nvmlDeviceGetCount()\\nfor i in range(deviceCount):\\n\\thandle = nvmlDeviceGetHandleByIndex(i)\\n\\tprint(\"Device\", i, \":\", nvmlDeviceGetName(handle))\\nnvmlShutdown()' | python3"
+      bash -c "printf 'from pynvml import *\\nnvmlInit()\\nprint(\"Driver Version:\", nvmlSystemGetDriverVersion())\\ndeviceCount = nvmlDeviceGetCount()\\nfor i in range(deviceCount):\\n\\thandle = nvmlDeviceGetHandleByIndex(i)\\n\\tprint(\"Device\", i, \":\", nvmlDeviceGetName(handle))\\nnvmlShutdown()' | python3; CUDA_VISIBLE_DEVICES=all printf 'from pynvml import *\\nnvmlInit()\\nprint(\"Driver Version:\", nvmlSystemGetDriverVersion())\\ndeviceCount = nvmlDeviceGetCount()\\nfor i in range(deviceCount):\\n\\thandle = nvmlDeviceGetHandleByIndex(i)\\n\\tprint(\"Device\", i, \":\", nvmlDeviceGetName(handle))\\nnvmlShutdown()' | python3"
 
