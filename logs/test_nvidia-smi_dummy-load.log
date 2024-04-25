@@ -1,15 +1,16 @@
+make[1]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
 
 Testing nvidia-smi processes:
 COMPOSE_FILE=nvidia-smi/compose_testGPUAccess_dummy_load.yml make trunc-test
-make[1]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
-make launch-test
 make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make launch-test
+make[3]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
 docker compose -f nvidia-smi/compose_testGPUAccess_dummy_load.yml up
 Attaching to test-1
-[2Ktest-1  | root           1  0.0  0.0   4364  2688 ?        Ss   11:19   0:00 bash -c python3 /code/base_fct.py & ps -aux | grep -i python3; nvidia-smi; sleep 5
-[2Ktest-1  | root           7  0.0  0.0   9916   896 ?        D    11:19   0:00 python3 /code/base_fct.py
-[2Ktest-1  | root           9  0.0  0.0   3472  1344 ?        S    11:19   0:00 grep -i python3
-[2Ktest-1  | Sun Apr 21 11:19:53 2024       
+[2Ktest-1  | root           1  0.0  0.0   4364  2688 ?        Ss   07:34   0:00 bash -c python3 /code/base_fct.py & ps -aux | grep -i python3; nvidia-smi; sleep 5
+[2Ktest-1  | root           7  0.0  0.0  11964  4928 ?        R    07:34   0:00 python3 /code/base_fct.py
+[2Ktest-1  | root           9  0.0  0.0   3472  1344 ?        S    07:34   0:00 grep -i python3
+[2Ktest-1  | Thu Apr 25 07:34:37 2024       
 [2Ktest-1  | +---------------------------------------------------------------------------------------+
 [2Ktest-1  | | NVIDIA-SMI 535.171.04             Driver Version: 535.171.04   CUDA Version: 12.2     |
 [2Ktest-1  | |-----------------------------------------+----------------------+----------------------+
@@ -18,15 +19,15 @@ Attaching to test-1
 [2Ktest-1  | |                                         |                      |               MIG M. |
 [2Ktest-1  | |=========================================+======================+======================|
 [2Ktest-1  | |   0  NVIDIA TITAN X (Pascal)        Off | 00000000:03:00.0 Off |                  N/A |
-[2Ktest-1  | | 23%   27C    P8               9W / 250W |     29MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | | 23%   28C    P8               8W / 250W |     30MiB / 12288MiB |      0%      Default |
 [2Ktest-1  | |                                         |                      |                  N/A |
 [2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
 [2Ktest-1  | |   1  NVIDIA TITAN X (Pascal)        Off | 00000000:04:00.0 Off |                  N/A |
-[2Ktest-1  | | 23%   24C    P8               8W / 250W |      6MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | | 23%   24C    P8               9W / 250W |      6MiB / 12288MiB |      0%      Default |
 [2Ktest-1  | |                                         |                      |                  N/A |
 [2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
 [2Ktest-1  | |   2  NVIDIA TITAN X (Pascal)        Off | 00000000:81:00.0 Off |                  N/A |
-[2Ktest-1  | | 23%   25C    P8              10W / 250W |      6MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | | 23%   25C    P8               9W / 250W |      6MiB / 12288MiB |      0%      Default |
 [2Ktest-1  | |                                         |                      |                  N/A |
 [2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
 [2Ktest-1  | |   3  NVIDIA TITAN V                 Off | 00000000:82:00.0 Off |                  N/A |
@@ -40,7 +41,7 @@ Attaching to test-1
 [2Ktest-1  | |        ID   ID                                                             Usage      |
 [2Ktest-1  | |=======================================================================================|
 [2Ktest-1  | +---------------------------------------------------------------------------------------+
-[2Ktest-1  | 'GPU:0\nno processes are running'
+[2K[2K[2Ktest-1  | 'GPU:0\nno processes are running'
 [2Ktest-1  | GPU:0
 [2Ktest-1  | no processes are running
 [2Ktest-1  | ['no processes are running']
@@ -58,37 +59,37 @@ Attaching to test-1
 [2Ktest-1  | ['no processes are running']
 [2Ktest-1  | no processes are running
 [2Ktest-1  | {}
-[2Ktest-1  | 'GPU:3\nprocess     284964 uses      326.000 MB GPU memory'
+[2Ktest-1  | 'GPU:3\nprocess     531655 uses      326.000 MB GPU memory'
 [2Ktest-1  | GPU:3
-[2Ktest-1  | process     284964 uses      326.000 MB GPU memory
-[2Ktest-1  | ['process     284964 uses      326.000 MB GPU memory']
-[2Ktest-1  | 284964
-[2Ktest-1  | {'284964': []}
+[2Ktest-1  | process     531655 uses      326.000 MB GPU memory
+[2Ktest-1  | ['process     531655 uses      326.000 MB GPU memory']
+[2Ktest-1  | 531655
+[2Ktest-1  | {'531655': []}
 test-1 exited with code 0
-make[2]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make[3]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
 make stop-test
-make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make[3]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
 docker compose -p gpu_access_test down
+make[3]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
 make[2]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
-make[1]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
 
 Testing nvidia-smi processes with pid host:
 COMPOSE_FILE=nvidia-smi/compose_testGPUAccess_dummy_load_pid_host.yml make trunc-test
-make[1]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
-make launch-test
 make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make launch-test
+make[3]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
 docker compose -f nvidia-smi/compose_testGPUAccess_dummy_load_pid_host.yml up
 Attaching to test-1
 [2K[2K[2Ktest-1  | root        1401  0.0  0.0  42344 19712 ?        Ss   Apr20   0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
 [2Ktest-1  | root        1565  0.0  0.0 119444 23296 ?        Ssl  Apr20   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
-[2Ktest-1  | root        3317  6.9  0.1 227552 65856 ?        Sl   Apr20  90:39 python3 -m clearml_agent daemon --docker ubuntu:22.04 --force-current-version
-[2Ktest-1  | root        3319  6.9  0.1 227396 66752 ?        Sl   Apr20  90:52 python3 -m clearml_agent daemon --docker ubuntu:22.04 --force-current-version
-[2Ktest-1  | root        3320  7.0  0.1 227548 65856 ?        Sl   Apr20  90:55 python3 -m clearml_agent daemon --docker ubuntu:22.04 --force-current-version
-[2Ktest-1  | root        3321  7.1  0.1 227544 66752 ?        Sl   Apr20  92:49 python3 -m clearml_agent daemon --docker ubuntu:22.04 --force-current-version
-[2Ktest-1  | root      285927  3.0  0.0   4364  2688 ?        Ss   11:19   0:00 bash -c python3 /code/base_fct.py & sleep 1; ps -aux | grep -i python3; nvidia-smi; sleep 5
-[2Ktest-1  | root      285983  102  0.4 2911560 309120 ?      R    11:19   0:01 python3 /code/base_fct.py
-[2Ktest-1  | root      286004  0.0  0.0   3472  1792 ?        S    11:20   0:00 grep -i python3
-[2Ktest-1  | Sun Apr 21 11:20:01 2024       
+[2Ktest-1  | root        3317  6.8  0.1 227552 65856 ?        Sl   Apr20 467:31 python3 -m clearml_agent daemon --docker ubuntu:22.04 --force-current-version
+[2Ktest-1  | root        3319  6.8  0.1 227396 66752 ?        Sl   Apr20 468:05 python3 -m clearml_agent daemon --docker ubuntu:22.04 --force-current-version
+[2Ktest-1  | root        3320  6.8  0.1 227548 65856 ?        Sl   Apr20 470:26 python3 -m clearml_agent daemon --docker ubuntu:22.04 --force-current-version
+[2Ktest-1  | root        3321  7.0  0.1 227544 66752 ?        Sl   Apr20 481:37 python3 -m clearml_agent daemon --docker ubuntu:22.04 --force-current-version
+[2Ktest-1  | root      532607  1.5  0.0   4364  2688 ?        Ss   07:34   0:00 bash -c python3 /code/base_fct.py & sleep 1; ps -aux | grep -i python3; nvidia-smi; sleep 5
+[2Ktest-1  | root      532659  103  0.4 2912984 310464 ?      R    07:34   0:01 python3 /code/base_fct.py
+[2Ktest-1  | root      532681  0.0  0.0   3472  1792 ?        S    07:34   0:00 grep -i python3
+[2Ktest-1  | Thu Apr 25 07:34:45 2024       
 [2Ktest-1  | +---------------------------------------------------------------------------------------+
 [2Ktest-1  | | NVIDIA-SMI 535.171.04             Driver Version: 535.171.04   CUDA Version: 12.2     |
 [2Ktest-1  | |-----------------------------------------+----------------------+----------------------+
@@ -97,15 +98,15 @@ Attaching to test-1
 [2Ktest-1  | |                                         |                      |               MIG M. |
 [2Ktest-1  | |=========================================+======================+======================|
 [2Ktest-1  | |   0  NVIDIA TITAN X (Pascal)        Off | 00000000:03:00.0 Off |                  N/A |
-[2Ktest-1  | | 23%   27C    P8               8W / 250W |     29MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | | 23%   28C    P8              11W / 250W |     30MiB / 12288MiB |      0%      Default |
 [2Ktest-1  | |                                         |                      |                  N/A |
 [2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
 [2Ktest-1  | |   1  NVIDIA TITAN X (Pascal)        Off | 00000000:04:00.0 Off |                  N/A |
-[2Ktest-1  | | 23%   24C    P8               9W / 250W |      6MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | | 23%   24C    P8               8W / 250W |      6MiB / 12288MiB |      0%      Default |
 [2Ktest-1  | |                                         |                      |                  N/A |
 [2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
 [2Ktest-1  | |   2  NVIDIA TITAN X (Pascal)        Off | 00000000:81:00.0 Off |                  N/A |
-[2Ktest-1  | | 23%   25C    P8               8W / 250W |      6MiB / 12288MiB |      0%      Default |
+[2Ktest-1  | | 23%   25C    P8               9W / 250W |      6MiB / 12288MiB |      0%      Default |
 [2Ktest-1  | |                                         |                      |                  N/A |
 [2Ktest-1  | +-----------------------------------------+----------------------+----------------------+
 [2Ktest-1  | |   3  NVIDIA TITAN V                 Off | 00000000:82:00.0 Off |                  N/A |
@@ -119,7 +120,7 @@ Attaching to test-1
 [2Ktest-1  | |        ID   ID                                                             Usage      |
 [2Ktest-1  | |=======================================================================================|
 [2Ktest-1  | |    0   N/A  N/A      2313      G   /usr/lib/xorg/Xorg                           18MiB |
-[2Ktest-1  | |    0   N/A  N/A      3072      G   /usr/bin/gnome-shell                          8MiB |
+[2Ktest-1  | |    0   N/A  N/A      3072      G   /usr/bin/gnome-shell                          9MiB |
 [2Ktest-1  | |    1   N/A  N/A      2313      G   /usr/lib/xorg/Xorg                            4MiB |
 [2Ktest-1  | |    2   N/A  N/A      2313      G   /usr/lib/xorg/Xorg                            4MiB |
 [2Ktest-1  | |    3   N/A  N/A      2313      G   /usr/lib/xorg/Xorg                            4MiB |
@@ -142,16 +143,17 @@ Attaching to test-1
 [2Ktest-1  | ['no processes are running']
 [2Ktest-1  | no processes are running
 [2Ktest-1  | {}
-[2Ktest-1  | 'GPU:3\nprocess     285983 uses      326.000 MB GPU memory'
+[2Ktest-1  | 'GPU:3\nprocess     532659 uses      326.000 MB GPU memory'
 [2Ktest-1  | GPU:3
-[2Ktest-1  | process     285983 uses      326.000 MB GPU memory
-[2Ktest-1  | ['process     285983 uses      326.000 MB GPU memory']
-[2Ktest-1  | 285983
-[2Ktest-1  | {'285983': ['root      285983 80.0  0.7 20696168 479892 ?     Sl   11:19   0:01 python3 /code/base_fct.py\n']}
+[2Ktest-1  | process     532659 uses      326.000 MB GPU memory
+[2Ktest-1  | ['process     532659 uses      326.000 MB GPU memory']
+[2Ktest-1  | 532659
+[2Ktest-1  | {'532659': ['root      532659  155  0.7 20696168 480420 ?     Sl   07:34   0:01 python3 /code/base_fct.py\n']}
 test-1 exited with code 0
-make[2]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make[3]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
 make stop-test
-make[2]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
+make[3]: Entering directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
 docker compose -p gpu_access_test down
+make[3]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
 make[2]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
 make[1]: Leaving directory '/home/blissfox-server/GitRepos/compose-gpu_access_restriction'
