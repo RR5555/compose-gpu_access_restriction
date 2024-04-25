@@ -117,13 +117,13 @@ all-pynvml-tests: ## Run all pytorch tests
 	COMPOSE_FILE=pynvml/compose_testGPUAccess_NVIDIA_VISIBLE_DEVICES.yml $(MAKE) trunc-test
 
 log-all-tests: ## Run all tests and log their outputs
-	@echo #####################################################################
+	@echo 
 	$(MAKE) nvidia-smi-dummy-load-tests > ./logs/test_nvidia-smi_dummy-load.log
-	@echo #####################################################################
+	@echo 
 	$(MAKE) all-nvidia-smi-tests > ./logs/test_nvidia-smi.log
-	@echo #####################################################################
+	@echo 
 	$(MAKE) all-pytorch-tests > ./logs/test_pytorch.log
-	@echo #####################################################################
+	@echo 
 	$(MAKE) all-pynvml-tests > ./logs/test_pynvml.log
 
 
